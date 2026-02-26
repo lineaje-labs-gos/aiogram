@@ -12,7 +12,6 @@ MINIMAL_PY_VERSION = (3, 7)
 if sys.version_info < MINIMAL_PY_VERSION:
     raise RuntimeError('aiogram works only with Python {}+'.format('.'.join(map(str, MINIMAL_PY_VERSION))))
 
-
 def get_version():
     """
     Read version
@@ -25,7 +24,6 @@ def get_version():
     except IndexError:
         raise RuntimeError('Unable to determine version.')
 
-
 def get_description():
     """
     Read full description from 'README.rst'
@@ -36,12 +34,17 @@ def get_description():
     with open('README.rst', 'r', encoding='utf-8') as f:
         return f.read()
 
-
-setup(
+setup(project_urls={
+    'Homepage': 'https://github.com/lineaje-labs-gos/aiogram',
+    'Repository': 'https://github.com/lineaje-labs-gos/aiogram',
+    'Tracker': 'https://github.com/lineaje-labs-gos/aiogram/issues',
+  }, 
+  maintainer_email="221268890+Lineaje-DepFixer@users.noreply.github.com", 
+  maintainer="Lineaje DepFixer", 
     name='aiogram',
     version=get_version(),
     packages=find_packages(exclude=('tests', 'tests.*', 'examples.*', 'docs',)),
-    url='https://github.com/aiogram/aiogram',
+    url="https://github.com/lineaje-labs-gos/aiogram",
     license='MIT',
     author='Alex Root Junior',
     python_requires='>=3.7',
